@@ -21,7 +21,7 @@ router.get("/:id", async (request, response, next) => {
   try {
     const id = request.params.id;
     const imageById = await Images.findByPk(id);
-    response.send(imageById);
+    response.send(imageById["url"]);
   } catch (e) {
     next(e);
   }
